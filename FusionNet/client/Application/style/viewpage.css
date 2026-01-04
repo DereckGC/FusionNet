@@ -1,0 +1,73 @@
+/* Ajusta el diseño para que se adapte a la pantalla */
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+/* Imagen de perfil ocupa TODO el ancho del contenedor */
+.imagePage {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Ajusta la altura máxima */
+    object-fit: cover; /* Se adapta sin distorsión */
+    border-radius: 20px; /* Bordes redondeados */
+    border: 4px solid white; /* Borde blanco */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Sombra fuerte */
+}
+
+/* Estilo para el avatar del autor */
+#authorAvatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Sombra más marcada */
+}
+
+/* Texto en blanco, negrita y más grande */
+.text-white {
+    color: white !important;
+    font-weight: bold;
+}
+
+/* Títulos más grandes */
+h1 {
+    font-size: 3rem; /* Aumenta el tamaño del título */
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 2rem; /* Subtítulos más grandes */
+    font-weight: bold;
+}
+
+/* Descripción y estadísticas con mayor tamaño */
+.lead {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 992px) {
+    .text-lg-start {
+        text-align: center !important;
+    }
+
+    .imagePage {
+        max-height: 300px; /* Ajuste en móviles */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reduce un poco en móviles */
+    }
+
+    .lead {
+        font-size: 1.3rem;
+    }
+}

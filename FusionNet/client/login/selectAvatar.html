@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Login/style/style.css">
+    <style>
+        .avatar-img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .avatar-img:hover {
+            transform: scale(1.1);
+        }
+        .card {
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .card.selected {
+            background-color: #b8860b; /* Dorado oscuro */
+        }
+        @media (max-width: 576px) {
+            .col-6.col-sm-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/login/login.html" class="btn m-5" style="position: fixed; top: 0; z-index: 999;">Back</a>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h4 class="mb-4 pb-3">Select Avatar</h4>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_batman.png', 'Batman')">
+                    <img src="/avatars/avatar_batman.png" alt="Batman" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Batman</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_braking_bad.png', 'Breaking Bad')">
+                    <img src="/avatars/avatar_braking_bad.png" alt="Braking Bad" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Breaking Bad</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_cactus.png', 'Cactus')">
+                    <img src="/avatars/avatar_cactus.png" alt="Cactus" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cactus</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_default.png', 'Account')">
+                    <img src="/avatars/avatar_default.png" alt="Account" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Account</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_einstein.png', 'Einstein')">
+                    <img src="/avatars/avatar_einstein.png" alt="Einstein" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Einstein</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_girl.png', 'Laura')">
+                    <img src="/avatars/avatar_girl.png" alt="Laura" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laura</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_girl2.png', 'Maria')">
+                    <img src="/avatars/avatar_girl2.png" alt="Maria" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Maria</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_girl3.png', 'Carla')">
+                    <img src="/avatars/avatar_girl3.png" alt="Carla" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Carla</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_grandma.png', 'Grand Mother')">
+                    <img src="/avatars/avatar_grandma.png" alt="Grand Mother" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Grand Mother</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_guy.png', 'Daniel')">
+                    <img src="/avatars/avatar_guy.png" alt="Daniel" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Daniel</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_harley.png', 'Harley')">
+                    <img src="/avatars/avatar_harley.png" alt="Harley" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Harley</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_kid.png', 'Kid')">
+                    <img src="/avatars/avatar_kid.png" alt="Kid" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kid</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_king.png', 'King')">
+                    <img src="/avatars/avatar_king.png" alt="King" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">King</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_lazy.png', 'Lazy')">
+                    <img src="/avatars/avatar_lazy.png" alt="Lazy" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Lazy</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_ninja.png', 'Ninja')">
+                    <img src="/avatars/avatar_ninja.png" alt="Ninja" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ninja</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_robot.png', 'Robot')">
+                    <img src="/avatars/avatar_robot.png" alt="Robot" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Robot</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_russian_bear.png', 'Russian Bear')">
+                    <img src="/avatars/avatar_russian_bear.png" alt="Russian Bear" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Russian Bear</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3">
+                <div class="card" onclick="selectAvatar(this, '/avatars/avatar_singer.png', 'Singer')">
+                    <img src="/avatars/avatar_singer.png" alt="Singer" class="card-img-top avatar-img">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Singer</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Login/script/selectAvatar.js"></script>
+</body>
+</html>

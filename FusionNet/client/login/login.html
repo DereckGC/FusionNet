@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/Login/style/style.css">
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3 mt-3"><span>Log In </span><span>Sign Up</span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-2 pb-2 mt-0 pt-0 loginTitle">Log In</h4>
+                                            <div class="form-group">
+                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                                                <div class="invalid-feedback" id="logemail-error">Email is required</div>
+                                                <i class="input-icon bi bi-at"></i>
+                                            </div>    
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                <div class="invalid-feedback" id="logpass-error">Password is required</div>
+                                                <i class="input-icon bi bi-lock"></i>
+                                            </div>
+                                            <div class="invalid-feedback" id="login-error" style="display: none;">Invalid email or password</div>
+                                            <a href="#" class="btn mt-4" onclick="login()">submit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-3 pb-3 mt-4 pt-4">Sign Up</h4>
+
+                                            <div class="form-group">
+                                                <input type="text" name="singname" class="form-style" placeholder="Your Full Name" id="singname" autocomplete="off">
+                                                <div class="invalid-feedback" id="singname-error">Name is required or remove spaces</div>
+                                                <i class="input-icon bi bi-person"></i>
+                                            </div>    
+                                            <div class="form-group mt-2">
+                                                <input type="email" name="singemail" class="form-style" placeholder="Your Email" id="singemail" autocomplete="off">
+                                                <div class="invalid-feedback" id="singemail-error">Email is required</div>
+                                                <i class="input-icon bi bi-at"></i>
+                                            </div>    
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="singpass" class="form-style" placeholder="Your Password" id="singpass" autocomplete="off">
+                                                <div class="invalid-feedback" id="singpass-error">Password is required</div>
+                                                <i class="input-icon bi bi-lock"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="text" name="singbio" class="form-style" placeholder="Your Biography" id="singbio" autocomplete="off">
+                                                <div class="invalid-feedback" id="singbio-error">Biography is required</div>
+                                                <i class="input-icon bi bi-person-arms-up"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="text" name="singavatar" class="form-style" placeholder="Your Avatar" id="singavatar" autocomplete="off" readonly>
+                                                <div class="invalid-feedback" id="singavatar-error">Avatar is required</div>
+                                                <i class="input-icon bi bi-image-fill"></i>
+                                            </div>
+                                            <div class="valid-feedback" id="singup-success" style="display: none;">Account created successfully!</div>
+                                            <div class="invalid-feedback" id="singup-error" style="display: none;">Error creating your account</div>
+                                            
+                                            <div class="d-flex gap-3 justify-content-between align-items-center mb-4 mt-3 w-100">
+                                                <a href="/login/selectAvatar.html" class="btn btn-secondary flex-grow-1 text-center">Select Avatar</a>
+                                                <a href="#" class="btn btn-primary flex-grow-1 text-center" onclick="createAccount()">Submit</a>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Login/script/loginScript.js"></script>
+    <script src="/Login/script/createScript.js"></script>
+    <script>
+
+        if(localStorage.getItem('avatarSelected') != null)
+            document.getElementById('singavatar').value = localStorage.getItem('avatarSelected');
+
+        document.getElementById('reg-log').addEventListener('change', function() {
+            if (this.checked) {
+                document.querySelector('.card-3d-wrapper').style.transform = 'rotateY(180deg)';
+            } else {
+                document.querySelector('.card-3d-wrapper').style.transform = 'rotateY(0deg)';
+            }
+        });
+    </script>
+
+</body>
+</html>

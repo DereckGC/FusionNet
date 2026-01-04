@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Post View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/publication/style/fullProfile.css">
+    <style>
+        .comments-section {
+            max-height: 200px; /* Ajusta la altura máxima para activar el scroll */
+            overflow: auto; /* Mantiene el desplazamiento */
+            scrollbar-width: none; /* Oculta el scrollbar en Firefox */
+        }
+
+        .comments-section::-webkit-scrollbar {
+            display: none; /* Oculta el scrollbar en Chrome, Safari y Edge */
+        }
+
+    </style>
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+<body class="bg-dark">
+    
+    <main class="bg-dark"  id="postContainer">
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 bg-light p-3">
+                    
+                    <!-- Post Header with Author Info -->
+                    <div class="d-flex align-items-center mb-3 ">
+                        <img src="https://cdn-imgix.headout.com/tour/7064/TOUR-IMAGE/b2c74200-8da7-439a-95b6-9cad1aa18742-4445-dubai-img-worlds-of-adventure-tickets-02.jpeg?auto=format&w=900&h=562.5&q=90&fit=crop&ar=16%3A10" class="rounded-circle" alt="Author Avatar" style="width: 40px; height: 40px; object-fit: cover;">
+                        <h5 class="ms-3 mb-0" id="authorName">Author Name</h5>
+                        <h5 class="ms-3 mb-0" id="date">Date</h5>
+                    </div>
+
+                    <!-- Post Image -->
+                    <div class="text-center mb-3">
+                        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjdnNjFveDR3bDhjN3Fqcng4bmQ1MTd2enh2dzR1b3FnZjd6MWVtMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/C21GGDOpKT6Z4VuXyn/giphy.gif" class="img-fluid rounded" alt="Post GIF">
+                    </div>
+
+                    <!-- Post Description -->
+                    <h5 class="" id="title">Publication title</h5>
+                    <p id="postDescription" class="fs-5 text-dark mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+
+                    <!-- Post Actions (Like, Comment) -->
+                    <!-- Like Button with "See Who Liked" -->
+                    <div class="d-flex justify-content-between mb-4">
+                        <button class="btn  btnPublication like-btn  ">
+                            <i class="bi bi-heart"></i> Like
+                            <span id="likeCount" class="ms-2">10</span> <!-- Number of Likes -->
+                        </button>
+                        <button class="minimal-btn" data-bs-toggle="modal" data-bs-target="#likeModal">
+                            See who liked
+                        </button>
+                        <button class="btn  btnPublication comment-btn ">
+                            <i class="bi bi-chat"></i> Comment
+                        </button>
+                    </div>
+
+
+                    <!-- Comments Section -->
+                    <div class="mb-4 d-none">
+                        <div class="d-flex align-items-start mb-2">
+                            <img src="https://cdn-imgix.headout.com/tour/7064/TOUR-IMAGE/b2c74200-8da7-439a-95b6-9cad1aa18742-4445-dubai-img-worlds-of-adventure-tickets-02.jpeg?auto=format&w=900&h=562.5&q=90&fit=crop&ar=16%3A10" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;" alt="User Avatar">
+                            <div class="ms-3">
+                                <strong>User Name</strong>
+                                <p class="mb-0">Great post! Thanks for sharing.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-2">
+                            <img src="https://cdn-imgix.headout.com/tour/7064/TOUR-IMAGE/b2c74200-8da7-439a-95b6-9cad1aa18742-4445-dubai-img-worlds-of-adventure-tickets-02.jpeg?auto=format&w=900&h=562.5&q=90&fit=crop&ar=16%3A10" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;" alt="User Avatar">
+                            <div class="ms-3">
+                                <strong>User Name</strong>
+                                <p class="mb-0">I really enjoyed reading this, keep it up!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add a comment section -->
+                    <div class="d-flex">
+                        <input type="text" class="form-control me-2" placeholder="Add a comment...">
+                        <button class="btn btn-primary">Post</button>
+                    </div>
+
+                    <!-- Back Button -->
+                    <a href="index.html" class="btn btn-secondary btnPublication mt-4 w-100">⬅ Back</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="modal fade" id="likeModal" tabindex="-1" aria-labelledby="likeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="likeModalLabel">People who liked this post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="likeList" class="list-group">
+                        <div class="d-flex align-items-start mb-2">
+                            <img src="https://cdn-imgix.headout.com/tour/7064/TOUR-IMAGE/b2c74200-8da7-439a-95b6-9cad1aa18742-4445-dubai-img-worlds-of-adventure-tickets-02.jpeg?auto=format&w=900&h=562.5&q=90&fit=crop&ar=16%3A10" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;" alt="User Avatar">
+                            <div class="ms-3 mt-2">
+                                <strong>YONAX</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start mb-2">
+                            <img src="https://cdn-imgix.headout.com/tour/7064/TOUR-IMAGE/b2c74200-8da7-439a-95b6-9cad1aa18742-4445-dubai-img-worlds-of-adventure-tickets-02.jpeg?auto=format&w=900&h=562.5&q=90&fit=crop&ar=16%3A10" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;" alt="User Avatar">
+                            <div class="ms-3 mt-2">
+                                <strong>Ian</strong>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src = '/Application/script/loadMyPublications.js'></script>
+</html>

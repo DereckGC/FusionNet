@@ -1,0 +1,78 @@
+/* Common Button Style */
+.btnPublication {
+    padding: 0.8em 1.5em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 13px;
+    color: #131313;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #4cc9f0; /* Start with Blue */
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+}
+
+.btnPublication:before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 100%;
+    background-color: #ff6700; /* Orange background before hover */
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+}
+
+/* Hover Effects */
+.btnPublication:hover {
+    background-color: #ff3b3b; /* Change to Red */
+    color: #fff;
+    box-shadow: 0 2px 0 2px #900; /* Darker shadow for red */
+}
+
+.btnPublication:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+}
+
+/* Active Effects */
+.btnPublication:active {
+    transform: scale(0.9);
+}
+
+/* Back Button Specific Style */
+.btnPublication-back {
+    background-color: #333; /* Dark background for back button */
+    border: 2px solid #444; /* Darker border */
+    color: #fff; /* Light text for contrast */
+}
+
+.btnPublication-back:hover {
+    background-color: #111; /* Even darker on hover */
+    box-shadow: 0 2px 0 2px #444; /* Darker shadow */
+}
+.minimal-btn {
+    background: none;
+    border: none;
+    color: #007bff; /* Adjust color as needed */
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.minimal-btn:hover {
+    text-decoration: underline;
+}
+
+/* Specific button customizations */
+.like-btn {
+    /* Customize the Like button style if needed */
+}
+
+.comment-btn {
+    /* Customize the Comment button style if needed */
+}

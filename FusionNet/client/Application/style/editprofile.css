@@ -1,0 +1,102 @@
+/* Nuevos estilos que no sobrescriben los existentes */
+.container {
+    margin-top: 2rem;
+    max-width: 800px;
+    width: 100%;
+    background-color: #2a2b38; /* Fondo oscuro para el contenedor */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    background-color: #1f2029; /* Fondo oscuro para los inputs */
+    color: white; /* Texto blanco para los inputs */
+    border: 1px solid #444; /* Borde sutil */
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #007bff; /* Borde azul al enfocar */
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-container img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffeba7; /* Borde dorado para la imagen */
+}
+
+.form-container {
+    background-color: #2a2b38; /* Fondo oscuro para el formulario */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-control::placeholder {
+    color: #fff; /* Color del placeholder */
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(184, 134, 11, 0.5); 
+    border-color: #ffeba7; 
+}
+
+.btn {
+    border-radius: 0.5rem;
+    background-color: #ffeba7; /* Fondo dorado para los botones */
+    color: #102770; /* Texto azul oscuro */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #102770; /* Fondo azul oscuro al pasar el mouse */
+    color: #ffeba7; /* Texto dorado al pasar el mouse */
+}
+
+/* Estilos para el navbar inferior */
+.navbar-custom {
+    background-color: #1f2029;
+    box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+    padding: 15px 25px;
+    border-radius: 4px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar-brand img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.invalid-feedback {
+    display: none; /* Ocultar por defecto */
+    color: #dc3545; /* Color rojo para los mensajes de error */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+    margin-top: 0.25rem; /* Espaciado superior */
+}
+
+#form-error {
+    display: none; /* Ocultar por defecto */
+    color: #dc3545; /* Color rojo para el mensaje de error del formulario */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+    margin-top: 1rem; /* Espaciado superior */
+}

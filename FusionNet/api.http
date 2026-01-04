@@ -1,0 +1,480 @@
+### probar login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+{ 
+    "email": "ju2422an@example.com", 
+    "password": "securepassword123"
+}
+
+### USERS
+
+
+### probar auth
+GET http://localhost:3000/api/auth/checkAuth
+
+### probar log out
+GET http://localhost:3000/api/auth/logout
+
+### probar refresh token
+GET http://localhost:3000/api/auth/refreshToken
+
+
+### LISTAR USUARIOS
+GET http://localhost:3000/api/user
+
+### 
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "ian",
+    "email": "ju2422an@example.com",
+    "password": "securepassword123",
+    "biography": "Software developer with 10 years of experience.",
+    "avatar": "https://example.com/avatar/john_doe.png"
+}
+
+
+### Obtener un usuarioq
+GET http://localhost:3000/api/user/john_doe
+
+
+### Actualizar un usuario
+PUT http://localhost:3000/api/user/Ian
+Content-Type: application/json
+
+{
+    "username": "Ian",
+    "email": "ianharrietamunoz22@gmail.com",
+    "password": "securepassword123",
+    "biography": "Software developer with 10 years of experience.",
+    "avatar": "https://example.com/avatar/john_doe.png"
+}
+
+### Eliminar un usuario
+### Un usuario que existe
+DELETE http://localhost:3000/api/user/john_doe
+
+### Un usuario que no existe
+DELETE http://localhost:3000/api/user/Ian
+
+###ver notificaciones
+GET http://localhost:3000/api/user/friend/request/jayick
+
+###Create friend request
+POST http://localhost:3000/api/notification/friend/request/
+Content-Type: application/json
+
+{
+    "sender": "jayick",
+    "receiver": "yonax",
+    "content": "User1 has sent you a friend request."
+}
+
+###Aceptar notificacion
+
+POST http://localhost:3000/api/user/friend/request/accept
+Content-Type: application/json
+
+{
+    "idNotification": "67be2362d75d86eeaf133a2d",
+    "sender": "jayick",
+    "receiver": "yonax",
+    "answer": "accept"
+}	
+
+
+
+
+###Eliminar amigo
+POST http://localhost:3000/api/user/friend/delete/Dereck
+Content-Type: application/json
+
+{
+    "friendUsername": "Ian"
+}	
+
+### Bloquear usuario
+POST http://localhost:3000/api/user/friend/block/Dereck
+Content-Type: application/json
+
+{
+    "blockUsername": "Ian"
+}	
+
+
+### Desbloquear usuario
+POST http://localhost:3000/api/user/friend/unlock/Dereck
+Content-Type: application/json
+
+{
+    "unlockUsername": "Ian"
+}	
+
+
+
+
+### Login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/publication
+
+###
+GET http://localhost:3000/api/publication/Ian
+
+
+### Add Comment to Publication
+POST http://localhost:3000/api/publication/comment/67bf9ca888099e8daafb82b3
+Content-Type: application/json
+
+{
+    "user": "yonax",
+    "comment": "This is a test comment @Ians"
+}
+
+###
+POST http://localhost:3000/api/publication/like/67bf9ca888099e8daafb82b3
+Content-Type: application/json
+
+{
+    "username": "yonax"
+}
+
+### obtener likes
+GET http://localhost:3000/api/publication/likes/67bf97c483bb5158778fd6f6
+Content-Type: application/json
+
+### List All Pages
+GET http://localhost:3000/api/page
+
+### Get Page by Author
+GET http://localhost:3000/api/page/Ian
+### Delete Page
+DELETE http://localhost:3000/api/page/example2
+
+### Create Like Notification
+POST http://localhost:3000/api/notifications/like
+Content-Type: application/json
+
+{
+    "sender": "user_id",
+    "receiver": "user_id",
+    "publication": "publication_id"
+}
+
+### Create Comment Notification
+POST http://localhost:3000/api/notifications/comment
+Content-Type: application/json
+
+{
+    "sender": "user_id",
+    "receiver": "user_id",
+    "publication": "publication_id",
+    "comment": "This is a test comment"
+}
+
+
+
+
+
+
+
+### Get All Friend Requests Notifications
+GET http://localhost:3000/api/notification/friend/requests/Ian
+### Get All Like Notifications
+GET http://localhost:3000/api/notification/likes/Ian
+
+### Get All Comment Notifications
+GET http://localhost:3000/api/notification/comments/Ian
+
+
+
+
+### Get All Mention Notifications
+GET http://localhost:3001/api/notification/mentions/Ian
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Pruebas de Dereck
+
+### Creacion de usuarios
+
+###Usuario 1
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "admin@example.com",
+    "password": "123456",
+    "biography": "Biography of admin",
+    "avatar": "https://example.com/avatars/user1.png"
+}
+
+
+###Usuario 2
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user2",
+    "email": "user2@example.com",
+    "password": "password123",
+    "biography": "Biography of user2",
+    "avatar": "https://example.com/avatars/user2.png"
+}
+
+
+###Usuario 3
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user3",
+    "email": "user3@example.com",
+    "password": "password123",
+    "biography": "Biography of user3",
+    "avatar": "https://example.com/avatars/user3.png"
+}
+
+
+###Usuario 4
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user4",
+    "email": "user4@example.com",
+    "password": "password123",
+    "biography": "Biography of user4",
+    "avatar": "https://example.com/avatars/user4.png"
+}
+
+
+###Usuario 5
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user5",
+    "email": "user5@example.com",
+    "password": "password123",
+    "biography": "Biography of user5",
+    "avatar": "https://example.com/avatars/user5.png"
+}
+
+
+###Usuario 6
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user6",
+    "email": "user6@example.com",
+    "password": "password123",
+    "biography": "Biography of user6",
+    "avatar": "https://example.com/avatars/user6.png"
+}
+
+
+###Usuario 7
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "username": "user7",
+    "email": "user7@example.com",
+    "password": "password123",
+    "biography": "Biography of user7",
+    "avatar": "https://example.com/avatars/user7.png"
+}
+
+
+
+### Obtener usuarios
+GET http://localhost:3000/api/user
+
+### Obtener usuario por nombre
+GET http://localhost:3000/api/user/user1
+
+### Buscar usuario por nombre (el usuario que esta en sesion y al que busca)
+GET http://localhost:3000/api/user/find/user2/user1
+
+
+### Actualizar usuario
+PUT http://localhost:3000/api/user/newUsername
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "email": "user1@example.com",
+    "password": "newPassword123",
+    "biography": "This is the updated biography.",
+    "avatar": "https://example.com/avatars/newAvatar.png"
+}
+
+
+### Bloquear usuario
+POST http://localhost:3000/api/user/block/user1
+Content-Type: application/json
+
+{
+    "blockUsername": "user2"
+}
+
+### Desbloquear usuario
+POST http://localhost:3000/api/user/unlock/user1
+Content-Type: application/json
+
+{
+    "unlockUsername": "user2"
+}
+
+
+### Enviar solicitud de amistad
+POST http://localhost:3000/api/notification/friend/request/
+Content-Type: application/json
+
+{
+    "sender": "user1",
+    "receiver": "user2",
+    "content": "User1 has sent you a friend request."
+}
+
+### Obtener notificaciones
+GET http://localhost:3000/api/user/notifications/get/Ian
+Content-Type: application/json
+
+
+###Aceptar solicitud de amistad
+POST http://localhost:3000/api/user/friend/request/accept
+Content-Type: application/json
+
+{
+    "idNotification": "67bf474100fa304b899473f3",
+    "sender": "user1",
+    "receiver": "user2",
+    "answer": "accept"
+}	
+
+### Obtener amigos
+GET http://localhost:3000/api/user/friends/user1
+Content-Type: application/json
+
+
+
+
+
+
+### Crear publicacion
+POST http://localhost:3000/api/publication/create
+Content-Type: application/json
+
+{
+    "author": "user1",
+    "content": "This is a test publication.",
+    "multimedia": "https://example.com/publications/publication1.png"
+}
+
+### Obtener publicaciones de author
+GET http://localhost:3000/api/publication/Ian
+Content-Type: application/json
+
+### Obtener todas las publicaciones
+GET http://localhost:3000/api/publication
+Content-Type: application/json
+
+
+### Eliminar publicacion
+DELETE http://localhost:3000/api/publication/67bf47a500fa304b89947406
+Content-Type: application/json
+
+
+### Aniadir like a publicacion
+POST http://localhost:3000/api/publication/like/67bf479a00fa304b89947400
+Content-Type: application/json
+
+{
+    "username": "user4"
+}
+
+### Obtener likes de publicacion
+GET http://localhost:3000/api/publication/likes/67bf479a00fa304b89947400
+Content-Type: application/json
+
+### Aniadir comentario a publicacion
+POST http://localhost:3000/api/publication/comment/67bf479a00fa304b89947400
+Content-Type: application/json
+
+{
+    "user": "user2",
+    "comment": "Comentario"
+}
+
+
+
+### Crear pagina	
+POST http://localhost:3000/api/page/create
+Content-Type: application/json
+
+{
+    "author": "user1",
+    "name": "Page1",
+    "description": "Description of Page1",
+    "avatar": "https://example.com/avatars/page1.png"
+}
+
+### Obtener todas las paginas
+GET http://localhost:3000/api/page
+Content-Type: application/json
+
+
+### Obtener pagina por autor
+GET http://localhost:3000/api/page/user1
+
+### Eliminar pagina
+DELETE http://localhost:3000/api/page/Page 2
+Content-Type: application/json
+
+
+### Actualizar pagina
+PUT http://localhost:3000/api/page/Page 1
+
+
+### Seguir pagina
+POST http://localhost:3000/api/page/follow/Page 1
+Content-Type: application/json
+
+{
+    "username": "user4"
+}
+
+### Dejar de seguir pagina
+POST http://localhost:3000/api/page/unfollow/Page 1
+Content-Type: application/json
+
+{
+    "username": "user4"
+}
